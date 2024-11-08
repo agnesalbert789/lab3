@@ -1,0 +1,62 @@
+.button {
+    height: 60px;
+    width: 200px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: auto;
+    color: #1D3557;
+}
+
+.button svg rect {
+    transition: fill 0.3s ease-in-out; /* Smooth transition for background color */
+}
+
+.button svg text {
+    transition: fill 0.3s ease-in-out; /* Smooth transition for text color */
+}
+
+/* Change background color and text color on hover */
+.button:hover rect {
+    fill: lightgoldenrodyellow;
+}
+
+.button:hover svg text {
+    fill: #1D3557; /* Change text color to dark blue */
+}
+
+/* Before and after pseudo-elements for button border effects */
+.button::before,
+.button::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: block;
+    background-color: #1D3557;
+    transition: all 0.3s ease-in-out;
+}
+
+.button::after {
+    height: 2px;
+    width: 100%;
+    box-shadow: 0 58px #1D3557;
+}
+
+.button::before {
+    width: 2px;
+    height: 100%;
+    box-shadow: 198px 0 #1D3557;
+}
+
+.button:hover::before {
+    left: -5px;
+    box-shadow: 198px 0 #1D3557;
+}
+
+.button:hover::after {
+    top: -5px;
+    box-shadow: 0 68px #1D3557;
+}
